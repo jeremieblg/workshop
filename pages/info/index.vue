@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <navbar></navbar>
+    <div>info</div>
   </div>
 </template>
 
