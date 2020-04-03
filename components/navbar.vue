@@ -40,10 +40,17 @@ export default {
 </script>
 
 <style lang="scss">
+* {
+  font-family: Roboto;
+}
+.el-menu {
+  border-right: 0px;
+}
 .el-menu-vertical {
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 10;
   &:after {
     display: none !important;
     border: none !important;
@@ -66,6 +73,7 @@ export default {
       span {
         text-align: left;
         line-height: 42px;
+        color: $color-light-green;
       }
       div {
         line-height: 42px;
