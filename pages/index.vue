@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <navbar></navbar>
+    <progressbar></progressbar>
     <div class="main">
       <div class="mainLogo"></div>
       <div class="mainTitle">Appartement Temoin</div>
@@ -26,10 +27,12 @@
 
 <script>
 import navbar from '~/components/navbar.vue'
+import progressbar from '~/components/progressBar.vue'
 
 export default {
   components: {
-    navbar
+    navbar,
+    progressbar
   },
   data() {
     return {
