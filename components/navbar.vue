@@ -93,6 +93,11 @@ export default {
         color: $color-light-green !important;
       }
     }
+    .el-menu-item:focus,
+    .el-menu-item:hover {
+      outline: 0;
+      background-color: #2b2b3e;
+    }
   }
 }
 </style>
