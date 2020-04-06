@@ -1,6 +1,10 @@
 <template>
   <div class="container">
     <navbar></navbar>
+    <progressbar
+      :current-question="currentQuestion"
+      :nb-max-question="nbMaxQuestion"
+    ></progressbar>
     <div class="activityContainer">
       <div class="mainTitle">Salle de bain</div>
       <div class="mainCorp">
@@ -16,13 +20,18 @@
 
 <script>
 import navbar from '~/components/navbar.vue'
+import progressbar from '~/components/progressBar.vue'
 
 export default {
   components: {
-    navbar
+    navbar,
+    progressbar
   },
   data() {
-    return {}
+    return {
+      currentQuestion: 1,
+      nbMaxQuestion: 2
+    }
   },
   methods: {}
 }
