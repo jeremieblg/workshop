@@ -5,17 +5,17 @@
       <table class="table-sum">
         <tr>
           <td>
-            <table class="activity-table">
+            <table class="activity-table" @click="goTo('sdb')">
               <tr>
-                <td @click="goTo('sdb')">
+                <td>
                   Activit&eacute; n°1 : Salle de bain
                 </td>
               </tr>
             </table>
 
-            <table class="activity-table">
+            <table class="activity-table" @click="goTo('salon')">
               <tr>
-                <td @click="goTo('salon')">Activit&eacute; n°2 : Salon</td>
+                <td>Activit&eacute; n°2 : Salon</td>
               </tr>
             </table>
           </td>
@@ -59,13 +59,13 @@ table.activity-table {
   width: 18em;
   height: 10em;
   margin: 2em;
+  cursor: pointer;
   td {
     background-color: $color-light-green;
     font-size: 30px;
     color: $color-grey;
     &:hover {
       background-color: $color-dark-green;
-      cursor: pointer;
     }
   }
 }
