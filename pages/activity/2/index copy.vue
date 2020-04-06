@@ -8,9 +8,8 @@
     <div class="activityContainer">
       <div class="mainTitle">Salon</div>
       <div class="mainCorp">
-        Une multi prise est allumée sur laquelle sont branché la box internet,
-        TV et console de jeux. <br />
-        Vous avez me choix d'éteindre la multiprise.
+        Les ampoules sont allumées, vous avez le choix du type d'ampoule à
+        utiliser.
       </div>
       <el-swicth> </el-swicth>
     </div>
@@ -31,7 +30,7 @@ export default {
   },
   data() {
     return {
-      currentQuestion: 1,
+      currentQuestion: 2,
       nbMaxQuestion: 2
     }
   },
