@@ -62,4 +62,25 @@ html {
   text-align: center;
   background-color: $color-black;
 }
+.main-button {
+  width: 100%;
+  height: 70px;
+  background-color: $color-light-green;
+  z-index: 1;
+  margin-top: -30px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  display: flex;
+  justify-content: center;
+  span {
+    height: max-content;
+    margin-top: 30px;
+    font-size: 30px;
+    color: $color-grey;
+  }
+  &:hover {
+    background-color: $color-dark-green;
+    cursor: pointer;
+  }
+}
 </style>
