@@ -25,16 +25,6 @@
 export default {
   data() {
     return {}
-  },
-  methods: {
-    /* eslint-disable */
-    handleOpen(key, keyPath) {
-      console.log(key, keyPath)
-    },
-    handleClose(key, keyPath) {
-      console.log(key, keyPath)
-    }
-    /* eslint-enable */
   }
 }
 </script>
