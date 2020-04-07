@@ -5,7 +5,11 @@
       :current-question="currentQuestion"
       :nb-max-question="nbMaxQuestion"
     ></progressbar>
-    <question :activity="currentActivity" :question="curQuestion"></question>
+    <question
+      :activity="currentActivity"
+      :question="curQuestion"
+      :q="currentQuestion"
+    ></question>
     <div class="main-button" @click="submit()">
       <span>Suivant</span>
     </div>

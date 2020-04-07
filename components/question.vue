@@ -1,18 +1,15 @@
 <template>
   <div class="activityContainer">
     <div class="mainTitle">{{ title }}</div>
-    <div class="mainCorp">
-      {{ text }}
-    </div>
+    <div class="mainCorp">{{ text }}</div>
     <el-switch
-      v-model="value2"
+      v-model="responseToggle"
       style="display: block"
       active-color="#6eae35"
       inactive-color="#508026"
       :active-text="response1"
       :inactive-text="response2"
-    >
-    </el-switch>
+    ></el-switch>
   </div>
 </template>
 <script>
@@ -25,11 +22,15 @@ export default {
     question: {
       type: Number,
       required: true
+    },
+    q: {
+      type: Number,
+      required: true
     }
   },
   data() {
     return {
-      value2: true,
+      responseToggle: true,
       title: '',
       text: '',
       response1: '',
@@ -103,13 +104,30 @@ export default {
   computed: {},
   watch: {
     question(value) {
+      this.save()
       this.getQuestion(this.activity, value)
+    },
+    responseToggle(value) {
+      this.save()
     }
+  },
+  beforeDestroy() {
+    this.save()
   },
   created() {
     this.getQuestion(this.activity, this.question)
+    this.save()
   },
   methods: {
+    save() {
+      const question = 'q' + this.q
+      this.$store.commit({
+        type: 'response',
+        activity: this.activity,
+        question,
+        value: this.responseToggle
+      })
+    },
     getQuestion(activity, question) {
       if (activity === 'sdb') {
         this.title = this.sdb[question].title
