@@ -1,26 +1,11 @@
 <template>
   <div class="container">
     <navbar></navbar>
-    <div class="main-div">
-      <table class="table-sum">
-        <tr>
-          <td>
-            <table class="activity-table" @click="goTo('sdb')">
-              <tr>
-                <td>
-                  Activit&eacute; n°1 : Salle de bain
-                </td>
-              </tr>
-            </table>
-
-            <table class="activity-table" @click="goTo('salon')">
-              <tr>
-                <td>Activit&eacute; n°2 : Salon</td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-      </table>
+    <div class="act-list" @click="goTo('sdb')">
+      <span>Activit&eacute; n°1 : Salle de bain</span>
+    </div>
+    <div class="act-list" @click="goTo('salon')">
+      <span>Activit&eacute; n°2 : Salon</span>
     </div>
   </div>
 </template>
@@ -55,18 +40,23 @@ export default {
   justify-content: center;
 }
 
-table.activity-table {
-  width: 18em;
-  height: 10em;
-  margin: 2em;
+.act-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 65%;
+  height: 6em;
+  margin: 1%;
   cursor: pointer;
-  td {
-    background-color: $color-light-green;
-    font-size: 30px;
-    color: $color-grey;
-    &:hover {
-      background-color: $color-dark-green;
-    }
+  background-color: $color-light-green;
+  font-size: 30px;
+  color: $color-grey;
+  &:hover {
+    background-color: $color-dark-green;
+  }
+  span {
+    margin: auto;
   }
 }
 </style>
