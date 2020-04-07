@@ -1,11 +1,11 @@
 <template>
   <div class="result">
     <div class="cardResult">
-      <div class="scoreLogo"></div>
+      <div class="scoreLogo" :class="scoreLogo"></div>
       <span class="title">{{ activity.title }}</span>
       <div class="moneyContainer">
         <div class="logo"></div>
-        <span class="saving">10€</span>
+        <span class="saving">{{ score.count }}€</span>
       </div>
     </div>
     <div v-if="false" class="detail">
@@ -41,12 +41,27 @@ export default {
       required: true
     },
     score: {
-      type: String,
+      type: Object,
       required: true
     }
   },
   data() {
     return {}
+  },
+  computed: {
+    scoreLogo() {
+      switch (this.score.score) {
+        case 'a':
+          return 'scoreA'
+        case 'b':
+          return 'scoreB'
+        case 'c':
+          return 'scoreC'
+
+        default:
+          return ''
+      }
+    }
   }
 }
 </script>
@@ -71,10 +86,18 @@ export default {
       left: -20px;
       height: 40px;
       width: 40px;
-      background-image: url('../static/score_b_dark.png');
       background-size: 40px;
       background-position: 0;
       background-repeat: no-repeat;
+      &.scoreA {
+        background-image: url('../static/score_a_dark.png');
+      }
+      &.scoreB {
+        background-image: url('../static/score_b_dark.png');
+      }
+      &.scoreC {
+        background-image: url('../static/score_c_dark.png');
+      }
     }
     .title {
       height: fit-content;
@@ -83,7 +106,7 @@ export default {
     }
     .moneyContainer {
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
       align-items: center;
       width: 100px;
       .logo {

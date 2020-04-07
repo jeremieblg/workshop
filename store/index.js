@@ -16,6 +16,19 @@ const createStore = () => {
       }
     }),
     mutations: {
+      clear(state) {
+        state.game = {
+          name: '',
+          sdb: {
+            q1: '',
+            q2: ''
+          },
+          salon: {
+            q1: '',
+            q2: ''
+          }
+        }
+      },
       setName(state, name) {
         state.game.name = name
       },
