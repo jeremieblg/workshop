@@ -13,12 +13,22 @@
           Pour commencer nous avons besoin de quelques informations
         </div>
         <div class="containerInput">
-          <el-input v-model="input" placeholder="Nom" class="name"></el-input>
-          <el-input v-model="input" placeholder="Age" class="age"></el-input>
+          <el-input
+            v-model="name"
+            placeholder="Nom"
+            class="name"
+            :class="missingName"
+          ></el-input>
+          <el-input
+            v-model="age"
+            placeholder="Age"
+            class="age"
+            :class="missingAge"
+          ></el-input>
         </div>
       </div>
     </div>
-    <div class="main-button">
+    <div class="main-button" @click="start">
       <span>Commencer</span>
     </div>
   </div>
@@ -33,10 +43,41 @@ export default {
   },
   data() {
     return {
-      input: ''
+      name: '',
+      age: '',
+      missingName: '',
+      missingAge: ''
     }
   },
-  methods: {}
+  watch: {
+    name(value) {
+      if (value) {
+        this.missingName = ''
+      } else {
+        this.missingName = 'missingName'
+      }
+    },
+    age(value) {
+      if (value) {
+        this.missingAge = ''
+      } else {
+        this.missingAge = 'missingAge'
+      }
+    }
+  },
+  methods: {
+    start() {
+      if (this.name && this.age) {
+        this.$store.commit('setName', this.name)
+        this.$router.push({
+          path: '/info'
+        })
+      } else {
+        this.missingName = 'missingName'
+        this.missingAge = 'missingAge'
+      }
+    }
+  }
 }
 </script>
 
@@ -87,9 +128,25 @@ export default {
       justify-content: space-between;
       .name {
         width: 70%;
+        &.missingName {
+          .el-input__inner:focus {
+            border-color: red;
+          }
+          .el-input__inner {
+            border-color: red;
+          }
+        }
       }
       .age {
         width: 20%;
+        &.missingAge {
+          .el-input__inner:focus {
+            border-color: red;
+          }
+          .el-input__inner {
+            border-color: red;
+          }
+        }
       }
     }
   }
