@@ -1,6 +1,5 @@
 <template>
   <div class="containerAct">
-    <navbar></navbar>
     <progressbar
       :current-question="currentQuestion"
       :nb-max-question="nbMaxQuestion"
@@ -17,13 +16,11 @@
 </template>
 
 <script>
-import navbar from '~/components/navbar.vue'
 import progressbar from '~/components/progressBar.vue'
 import question from '~/components/question.vue'
 
 export default {
   components: {
-    navbar,
     progressbar,
     question
   },

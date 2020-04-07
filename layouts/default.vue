@@ -1,9 +1,17 @@
 <template>
   <div>
+    <navbar></navbar>
     <nuxt />
   </div>
 </template>
-
+<script>
+import navbar from '~/components/navbar.vue'
+export default {
+  components: {
+    navbar
+  }
+}
+</script>
 <style lang="scss">
 html {
   font-family: Roboto, 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
@@ -15,6 +23,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  background-color: $color-black;
 }
 
 *,
@@ -82,5 +91,13 @@ html {
     background-color: $color-dark-green;
     cursor: pointer;
   }
+}
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.5s;
+}
+.page-enter,
+.page-leave-active {
+  opacity: 0;
 }
 </style>

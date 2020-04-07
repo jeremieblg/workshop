@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <navbar></navbar>
     <div class="btnContainer">
       <div class="act-list" @click="goTo('sdb')">
         <span>Activit&eacute; n°1 : Salle de bain</span>
@@ -13,13 +12,7 @@
 </template>
 
 <script>
-import navbar from '~/components/navbar.vue'
-
 export default {
-  components: {
-    navbar
-  },
-
   methods: {
     goTo(param) {
       if (param === 'sdb') {

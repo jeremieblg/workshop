@@ -1,6 +1,5 @@
 <template>
   <div class="containerHome">
-    <navbar></navbar>
     <div class="main">
       <div class="mainLogo"></div>
       <div class="mainTitle">Appartement Temoin</div>
@@ -35,12 +34,7 @@
 </template>
 
 <script>
-import navbar from '~/components/navbar.vue'
-
 export default {
-  components: {
-    navbar
-  },
   data() {
     return {
       name: '',
