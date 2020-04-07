@@ -64,7 +64,7 @@ export default {
       if (this.name && this.age) {
         this.$store.commit('setName', this.name)
         this.$router.push({
-          path: '/info'
+          path: '/overview'
         })
       } else {
         this.missingName = 'missingName'

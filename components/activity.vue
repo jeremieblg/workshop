@@ -45,7 +45,7 @@ export default {
     submit() {
       if (this.currentQuestion === 2) {
         this.$router.push({
-          path: '/info'
+          path: '/overview'
         })
       } else {
         this.currentQuestion += 1
