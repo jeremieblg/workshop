@@ -4,7 +4,7 @@
       <div class="percent">
         <span>{{ currentQuestion }} / {{ nbMaxQuestion }}</span>
       </div>
-      <div class="percentage" :style="{ width: percent + '%' }"></div>
+      <div class="percentage" :class="animated"></div>
     </div>
   </div>
 </template>
@@ -23,21 +23,50 @@ export default {
   },
   data() {
     return {
-      percent: ''
+      percent: '',
+      animated: ''
     }
   },
   watch: {
     currentQuestion(param) {
-      this.percent = (param / this.nbMaxQuestion) * 100
+      this.animated = 'sizeFull'
+      setTimeout(() => {
+        this.percent = (param / this.nbMaxQuestion) * 100
+      }, 1000)
     }
   },
   created() {
+    this.animated = 'sizeHalf'
     this.percent = (this.currentQuestion / this.nbMaxQuestion) * 100
   }
 }
 </script>
 
 <style lang="scss" scoped>
+.sizeFull {
+  animation: 2s full;
+  width: 100% !important;
+}
+@keyframes full {
+  0% {
+    width: 50%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+.sizeHalf {
+  animation: 2s half;
+  width: 50% !important;
+}
+@keyframes half {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 50%;
+  }
+}
 .containerProgressBar {
   width: 100%;
   padding-left: 32px;
@@ -65,6 +94,7 @@ export default {
     }
     .percentage {
       position: absolute;
+      width: 0%;
       top: 0;
       left: 0;
       height: 100%;
