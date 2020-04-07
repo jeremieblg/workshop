@@ -44,12 +44,30 @@ export default {
   methods: {
     submit() {
       if (this.currentQuestion === 2) {
-        this.$router.push({
-          path: '/overview'
-        })
+        if (this.checkSdb() && this.checkSalon()) {
+          this.$router.push({
+            path: '/result'
+          })
+        } else {
+          this.$router.push({
+            path: '/overview'
+          })
+        }
       } else {
         this.currentQuestion += 1
       }
+    },
+    checkSdb() {
+      return (
+        this.$store.state.game.sdb.q1 !== '' &&
+        this.$store.state.game.sdb.q2 !== ''
+      )
+    },
+    checkSalon() {
+      return (
+        this.$store.state.game.salon.q1 !== '' &&
+        this.$store.state.game.salon.q2 !== ''
+      )
     }
   }
 }

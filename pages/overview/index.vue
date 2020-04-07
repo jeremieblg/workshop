@@ -1,10 +1,10 @@
 <template>
   <div class="container">
     <div class="btnContainer">
-      <div class="act-list" @click="goTo('sdb')">
+      <div v-if="!checkSdb" class="act-list" @click="goTo('sdb')">
         <span>Activit&eacute; n°1 : Salle de bain</span>
       </div>
-      <div class="act-list" @click="goTo('salon')">
+      <div v-if="!checkSalon" class="act-list" @click="goTo('salon')">
         <span>Activit&eacute; n°2 : Salon</span>
       </div>
     </div>
@@ -13,6 +13,20 @@
 
 <script>
 export default {
+  computed: {
+    checkSdb() {
+      return (
+        this.$store.state.game.sdb.q1 !== '' &&
+        this.$store.state.game.sdb.q2 !== ''
+      )
+    },
+    checkSalon() {
+      return (
+        this.$store.state.game.salon.q1 !== '' &&
+        this.$store.state.game.salon.q2 !== ''
+      )
+    }
+  },
   methods: {
     goTo(param) {
       if (param === 'sdb') {
