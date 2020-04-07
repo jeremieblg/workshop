@@ -2,10 +2,10 @@
   <div class="container">
     <div class="btnContainer">
       <div v-if="!checkSdb" class="act-list" @click="goTo('sdb')">
-        <span>Activit&eacute; n°1 : Salle de bain</span>
+        <span>Salle de bain</span>
       </div>
       <div v-if="!checkSalon" class="act-list" @click="goTo('salon')">
-        <span>Activit&eacute; n°2 : Salon</span>
+        <span>Salon</span>
       </div>
     </div>
   </div>
@@ -52,12 +52,15 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 55%;
+  height: 200px;
+  justify-content: space-around;
   .act-list {
     display: flex;
     align-items: center;
-    width: 65%;
-    height: 6em;
-    margin: 1%;
+    width: 100%;
+    height: 40%;
+    border-radius: 8px;
     cursor: pointer;
     background-color: $color-light-green;
     font-size: 30px;

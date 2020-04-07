@@ -1,4 +1,4 @@
-# workshop
+# ecopAppart
 
 ## Build Setup
 

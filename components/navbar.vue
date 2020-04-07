@@ -3,8 +3,6 @@
     class="el-menu-vertical"
     text-color="#fff"
     active-text-color="#ffd04b"
-    @open="handleOpen"
-    @close="handleClose"
   >
     <el-submenu index="1">
       <template slot="title">
@@ -15,7 +13,7 @@
         <nuxt-link to="/">Accueil</nuxt-link>
       </el-menu-item>
       <el-menu-item index="1-2">
-        <nuxt-link to="/overview">Information</nuxt-link>
+        <nuxt-link to="/information">Information</nuxt-link>
       </el-menu-item>
     </el-submenu>
   </el-menu>
