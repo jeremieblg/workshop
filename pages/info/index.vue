@@ -42,8 +42,6 @@ export default {
 
 .act-list {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   width: 65%;
   height: 6em;
