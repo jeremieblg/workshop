@@ -8,7 +8,7 @@
   >
     <el-submenu index="1">
       <template slot="title">
-        <span>Workshop</span>
+        <span>EcoAppart</span>
         <div></div>
       </template>
       <el-menu-item index="1-1">
