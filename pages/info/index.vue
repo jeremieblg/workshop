@@ -1,11 +1,13 @@
 <template>
   <div class="container">
     <navbar></navbar>
-    <div class="act-list" @click="goTo('sdb')">
-      <span>Activit&eacute; n°1 : Salle de bain</span>
-    </div>
-    <div class="act-list" @click="goTo('salon')">
-      <span>Activit&eacute; n°2 : Salon</span>
+    <div class="btnContainer">
+      <div class="act-list" @click="goTo('sdb')">
+        <span>Activit&eacute; n°1 : Salle de bain</span>
+      </div>
+      <div class="act-list" @click="goTo('salon')">
+        <span>Activit&eacute; n°2 : Salon</span>
+      </div>
     </div>
   </div>
 </template>
@@ -39,22 +41,26 @@ export default {
   flex-direction: column;
   justify-content: center;
 }
-
-.act-list {
+.btnContainer {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  width: 65%;
-  height: 6em;
-  margin: 1%;
-  cursor: pointer;
-  background-color: $color-light-green;
-  font-size: 30px;
-  color: $color-grey;
-  &:hover {
-    background-color: $color-dark-green;
-  }
-  span {
-    margin: auto;
+  .act-list {
+    display: flex;
+    align-items: center;
+    width: 65%;
+    height: 6em;
+    margin: 1%;
+    cursor: pointer;
+    background-color: $color-light-green;
+    font-size: 30px;
+    color: $color-grey;
+    &:hover {
+      background-color: $color-dark-green;
+    }
+    span {
+      margin: auto;
+    }
   }
 }
 </style>

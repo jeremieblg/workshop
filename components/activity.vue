@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="containerAct">
     <navbar></navbar>
     <progressbar
       :current-question="currentQuestion"
@@ -59,8 +59,15 @@ export default {
 </script>
 
 <style lang="scss">
-.container {
+.containerAct {
   flex-direction: column;
   justify-content: flex-start;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: $color-black;
 }
 </style>

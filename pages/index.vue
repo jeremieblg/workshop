@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="containerHome">
     <navbar></navbar>
     <div class="main">
       <div class="mainLogo"></div>
@@ -82,9 +82,16 @@ export default {
 </script>
 
 <style lang="scss">
-.container {
+.containerHome {
   flex-direction: column;
   justify-content: flex-start;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: $color-black;
 }
 .main {
   background-color: $color-grey;
