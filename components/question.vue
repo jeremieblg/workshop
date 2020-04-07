@@ -1,9 +1,10 @@
 <template>
   <div class="activityContainer">
-    <div class="mainTitle">{{ title }}</div>
-    <div class="mainCorp">{{ text }}</div>
+    <div class="mainTitle" :class="animated">{{ title }}</div>
+    <div class="mainCorp" :class="animated">{{ text }}</div>
     <el-switch
       v-model="responseToggle"
+      :class="animated"
       style="display: block"
       active-color="#6eae35"
       inactive-color="#508026"
@@ -35,6 +36,7 @@ export default {
       text: '',
       response1: '',
       response2: '',
+      animated: '',
       sdb: [
         {
           title: 'Salle de bain',
@@ -105,7 +107,10 @@ export default {
   watch: {
     question(value) {
       this.save()
-      this.getQuestion(this.activity, value)
+      this.animated = 'animate'
+      setTimeout(() => {
+        this.getQuestion(this.activity, value)
+      }, 1000)
     },
     responseToggle(value) {
       this.save()
@@ -118,6 +123,7 @@ export default {
     this.getQuestion(this.activity, this.question)
     this.save()
   },
+
   methods: {
     save() {
       const question = 'q' + this.q
@@ -147,6 +153,21 @@ export default {
 </script>
 
 <style lang="scss">
+.animate {
+  animation: 2s outIn;
+}
+@keyframes outIn {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
 .activityContainer {
   background-color: $color-black;
   height: 500px;
