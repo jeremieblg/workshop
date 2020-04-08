@@ -3,33 +3,14 @@
     <div class="activityContainer">
       <div class="mainTitle">Score</div>
       <result
-        :activity="activities.sdb"
-        :responses="this.$store.state.game.sdb"
-        :score="countScoreSdb()"
-        :display-full="false"
-      ></result>
-      <result
         :activity="activities.salon"
         :responses="this.$store.state.game.salon"
         :score="countScoreSalon()"
-        :display-full="false"
+        :display-full="true"
       ></result>
-      <div class="mainTitle">Total</div>
-      <div class="containerTotal" :class="blur" @click="wrapper = !wrapper">
-        <div class="logo" :class="scoreLogo"></div>
-        <div class="savingAll">
-          <div class="pig"></div>
-          <span class="savingMoney">{{ countMoney() }}€</span>
-        </div>
-      </div>
-      <transition name="page">
-        <div v-if="wrapper" class="wrapperInfo" @click="wrapper = !wrapper">
-          <span>Économie sur un an suite à vos choix</span>
-        </div>
-      </transition>
     </div>
     <div class="main-button" @click="submit()">
-      <span>Accueil</span>
+      <span>Retour</span>
     </div>
   </div>
 </template>
@@ -56,7 +37,7 @@ export default {
             },
             {
               text:
-                'Utiliser des mousseurs:160 € pour une douche +35€ x 2 robinets',
+                'Utiliser des mousseurs: 160 € pour une douche +35€ x 2 robinets',
               count: 230
             }
           ]
@@ -67,7 +48,7 @@ export default {
           council: [
             {
               text:
-                'Eteindre la multiprise:80€/an pour les veilles + 13€ pour la boxe',
+                'Eteindre la multiprise: 80€/an pour les veilles + 13€ pour la boxe',
               count: 93
             },
             {
@@ -92,13 +73,6 @@ export default {
 
         default:
           return ''
-      }
-    },
-    blur() {
-      if (this.wrapper) {
-        return 'blur'
-      } else {
-        return ''
       }
     }
   },
@@ -204,9 +178,8 @@ export default {
     },
     submit() {
       this.$router.push({
-        path: '/'
+        path: '/result'
       })
-      this.$store.commit('clear')
     }
   }
 }
@@ -275,7 +248,7 @@ export default {
       background-size: 164px;
       background-position: 0;
       background-repeat: no-repeat;
-      background-image: url('../../static/saving_all.png');
+      background-image: url('../../../static/saving_all.png');
       display: flex;
       align-items: center;
       padding: 10px;
@@ -285,7 +258,7 @@ export default {
         background-size: 92px;
         background-position: -22px -25px;
         background-repeat: no-repeat;
-        background-image: url('../../static/pig_saving_light.png');
+        background-image: url('../../../static/pig_saving_light.png');
       }
       .savingMoney {
         font-size: 36px;
@@ -300,13 +273,13 @@ export default {
     background-position: 0;
     background-repeat: no-repeat;
     &.scoreA {
-      background-image: url('../../static/score_a_light.png');
+      background-image: url('../../../static/score_a_light.png');
     }
     &.scoreB {
-      background-image: url('../../static/score_b_light.png');
+      background-image: url('../../../static/score_b_light.png');
     }
     &.scoreC {
-      background-image: url('../../static/score_c_light.png');
+      background-image: url('../../../static/score_c_light.png');
     }
   }
 }
