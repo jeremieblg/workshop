@@ -8,13 +8,13 @@
         limité dans le cadre du Campus Track 2020 organisé par Campus Academy.
       </p>
 
-      <p>Elle contient des fonctionnalités de bases :</p>
+      <p>Elle contient des fonctionnalités de base :</p>
       <p>- La page d'accueil</p>
       <p>- Des activités permettant d'illustrer le fonctionnement</p>
       <p>- Une page récapitulative à la fin du module.</p>
 
-      <p>Ce qu'elle ne contient pas pour le moment :</p>
-      <p>- Scanner de QRCODE</p>
+      <p>Ce qu'elle ne contient pas:</p>
+      <p>- Scanner un QRCODE</p>
       <p>- Partie administration et statistique</p>
       <p>- Tableau des scores général</p>
       <p>- Gestion de la base de donnée</p>
