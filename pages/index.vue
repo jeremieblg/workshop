@@ -23,6 +23,7 @@
             placeholder="Age"
             class="age"
             :class="missingAge"
+            type="number"
           ></el-input>
         </div>
       </div>
@@ -45,15 +46,22 @@ export default {
   },
   watch: {
     name(value) {
+      const regex = /^[A-Za-z]+$/
       if (value) {
-        this.missingName = ''
+        if (!value.match(regex)) {
+          this.missingName = 'missingName'
+        } else {
+          this.missingName = ''
+        }
       } else {
         this.missingName = 'missingName'
       }
     },
     age(value) {
       if (value) {
-        this.missingAge = ''
+        if (value > 99) {
+          this.age = 99
+        }
       } else {
         this.missingAge = 'missingAge'
       }
