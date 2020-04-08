@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="containerInfo">
     <div class="div-text">
       <p>
         Cette application est un POC (Proof Of Concept), une démonstration, de
@@ -31,7 +31,7 @@ export default {}
 </script>
 
 <style lang="scss">
-.container {
+.containerInfo {
   margin-top: 54px;
   flex-direction: column;
   justify-content: center;
