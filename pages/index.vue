@@ -5,7 +5,7 @@
       <div class="mainTitle">Appartement Temoin</div>
       <div class="mainCorp">
         Cet outil a pour but de vous permettre de réaliser plusieurs activités
-        afin de mesurer votre comportement sur consommation énergétique
+        afin de mesurer votre comportement sur votre consommation énergétique
       </div>
       <div class="mainForm">
         <div class="mainInfo">
