@@ -13,13 +13,18 @@
         :score="countScoreSalon()"
       ></result>
       <div class="mainTitle">Total</div>
-      <div class="containerTotal">
+      <div class="containerTotal" :class="blur" @click="wrapper = !wrapper">
         <div class="logo" :class="scoreLogo"></div>
         <div class="savingAll">
           <div class="pig"></div>
           <span class="savingMoney">{{ countMoney() }}€</span>
         </div>
       </div>
+      <transition name="page">
+        <div v-if="wrapper" class="wrapperInfo" @click="wrapper = !wrapper">
+          <span>Économie sur un an suite à vos choix</span>
+        </div>
+      </transition>
     </div>
     <div class="main-button" @click="submit()">
       <span>Accueil</span>
@@ -36,6 +41,7 @@ export default {
   },
   data() {
     return {
+      wrapper: false,
       activities: {
         sdb: {
           title: 'Salle de bain',
@@ -82,6 +88,13 @@ export default {
 
         default:
           return ''
+      }
+    },
+    blur() {
+      if (this.wrapper) {
+        return 'blur'
+      } else {
+        return ''
       }
     }
   },
@@ -208,6 +221,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.blur {
+  filter: blur(3px);
+}
 .containerAct {
   flex-direction: column;
   justify-content: flex-start;
@@ -233,6 +249,26 @@ export default {
     padding-left: 32px;
     padding-right: 32px;
     align-items: center;
+    position: relative;
+    .wrapperInfo {
+      position: absolute;
+      bottom: 58px;
+      left: 29px;
+      height: 105px;
+      width: 83%;
+      background-color: rgba(0, 0, 0, 0.58);
+      border-radius: 64px;
+      box-shadow: 0px 0px 9px 0px #000000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      span {
+        color: white;
+        font-size: 25px;
+        height: fit-content;
+        width: 90%;
+      }
+    }
   }
   .mainTitle {
     font-size: 35px;
