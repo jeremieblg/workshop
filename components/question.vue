@@ -56,7 +56,7 @@ export default {
         {
           title: 'Salle de bain',
           text:
-            "Un robinet classique est installer dans l'évier, vous avez le choix d'installé un mousseur",
+            "Un robinet classique est installé dans l'évier, vous avez le choix d'installer un mousseur",
           response: [
             {
               text: 'Oui',
@@ -73,7 +73,7 @@ export default {
         {
           title: 'Salon',
           text:
-            "Une multi prise est allumée sur laquelle sont branchés la box internet, TV, et console de jeux. Vous avez le choix d'éteindre la multiprise",
+            "Une multi prises est allumée sur laquelle sont branchées la box internet, TV et console de jeux. Vous avez le choix d'éteindre la multi prises",
           response: [
             {
               text: 'Oui',
